@@ -18,15 +18,15 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState,
     extraReducers: {
-        // [authRegister.pending]: handlePending,
-        // [authRegister.rejected]:handleReject,
+        [authRegister.pending]: handlePending,
+        [authRegister.rejected]:handleReject,
         [authRegister.fulfilled](state, action) {
             state.isLoggedIn = true;
             state.user = action.payload.user;
             state.token = action.payload.token;
         },
-        // [authLogIn.pending]: handlePending,
-        // [authLogIn.rejected]: handleReject,
+        [authLogIn.pending]: handlePending,
+        [authLogIn.rejected]: handleReject,
         [authLogIn.fulfilled](state, action) {
             state.isLoggedIn = true;
             state.user = action.payload.user;  
